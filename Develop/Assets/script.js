@@ -1,5 +1,3 @@
-var now = Date().getMinutes;
-
 var displayTime = function (){
   document.getElementById("currentDay").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
 }
@@ -7,7 +5,7 @@ displayTime
 setInterval(displayTime,1000);
   // scrolling down shows business hours with timeblocks to enter text/events. 
   // color coding timeblocks to represent hours passed(Past), current hour(present), or future. 
-
+  var now = new Date().getHours();
   window.onload = function (){
     colorC();
     eightA();
@@ -23,9 +21,9 @@ setInterval(displayTime,1000);
     }
 
   function colorC () {
-    if (now > 8) {
+    if ( now > 8) {
       $("#comment8am").addClass("past");
-    } else if (now>=8 && now < 9) {
+    } else if (now >=8 && now < 9) {
       $("#comment8am").addClass("present");
     } else (now < 9) 
       $("#comment8am").addClass("future")
@@ -91,11 +89,11 @@ setInterval(displayTime,1000);
     var saveBtn = document.querySelector("#btn8am");
 
     saveBtn.addEventListener("click", updateOutput);
-    outputD.textContent = localStorage.getItem("content");
-    input_textarea.value = localStorage.getItem("content");
+    outputD.textContent = localStorage.getItem("8am");
+    input_textarea.value = localStorage.getItem("8am");
 
     function updateOutput() {
-      localStorage.setItem("content", input_textarea.value);
+      localStorage.setItem("8am", input_textarea.value);
 
       outputD.textContent = input_textarea.value;
     }
@@ -107,11 +105,11 @@ setInterval(displayTime,1000);
     var saveBtn1 = document.querySelector("#btn9am");
 
     saveBtn1.addEventListener("click", updateOutput1);
-    outputD1.textContent = localStorage.getItem("content1");
-    input_textarea1.value = localStorage.getItem("content1");
+    outputD1.textContent = localStorage.getItem("9am");
+    input_textarea1.value = localStorage.getItem("9am");
 
     function updateOutput1() {
-      localStorage.setItem("content1", input_textarea1.value);
+      localStorage.setItem("9am", input_textarea1.value);
 
       outputD1.textContent = input_textarea1.value;
     }
@@ -122,11 +120,11 @@ setInterval(displayTime,1000);
     var saveBtn2 = document.querySelector("#btn10am");
 
     saveBtn2.addEventListener("click", updateOutput2)
-    outputD2.textContent = localStorage.getItem("content2");
-    input_textarea2.value = localStorage.getItem("content2");
+    outputD2.textContent = localStorage.getItem("10am");
+    input_textarea2.value = localStorage.getItem("10am");
 
     function updateOutput2() {
-      localStorage.setItem("content2", input_textarea2.value);
+      localStorage.setItem("10am", input_textarea2.value);
 
       outputD2.textContent = input_textarea2.value;
     }
@@ -137,11 +135,11 @@ setInterval(displayTime,1000);
     var saveBtn3 = document.querySelector("#btn11am");
 
     saveBtn3.addEventListener("click", updateOutput3);
-    outputD3.textContent = localStorage.getItem("content3");
-    input_textarea3.value = localStorage.getItem("content3");
+    outputD3.textContent = localStorage.getItem("11am");
+    input_textarea3.value = localStorage.getItem("11am");
 
     function updateOutput3() {
-      localStorage.setItem("content3", input_textarea3.value);
+      localStorage.setItem("11am", input_textarea3.value);
 
       outputD3.textContent = input_textarea3.value;
     }
@@ -152,11 +150,11 @@ setInterval(displayTime,1000);
     var saveBtn4 = document.querySelector("#btn12pm");
 
     saveBtn4.addEventListener("click", updateOutput4);
-    outputD4.textContent = localStorage.getItem("content4");
-    input_textarea4.value = localStorage.getItem("content4");
+    outputD4.textContent = localStorage.getItem("12pm");
+    input_textarea4.value = localStorage.getItem("12pm");
 
     function updateOutput4() {
-      localStorage.setItem("content4", input_textarea4.value);
+      localStorage.setItem("12pm", input_textarea4.value);
 
       outputD4.textContent = input_textarea4.value;
     }
@@ -167,11 +165,11 @@ setInterval(displayTime,1000);
     var saveBtn5 = document.querySelector("#btn1pm");
 
     saveBtn5.addEventListener("click", updateOutput5);
-    outputD5.textContent = localStorage.getItem("content5");
-    input_textarea5.value = localStorage.getItem("content5");
+    outputD5.textContent = localStorage.getItem("1pm");
+    input_textarea5.value = localStorage.getItem("1pm");
 
     function updateOutput5() {
-      localStorage.setItem("content5", input_textarea5.value);
+      localStorage.setItem("1pm", input_textarea5.value);
 
       outputD5.textContent = input_textarea5.value;
     }
@@ -182,11 +180,11 @@ setInterval(displayTime,1000);
     var saveBtn6 = document.querySelector("#btn2pm");
 
     saveBtn6.addEventListener("click", updateOutput6);
-    outputD6.textContent = localStorage.getItem("content6");
-    input_textarea6.value = localStorage.getItem("content6");
+    outputD6.textContent = localStorage.getItem("2pm");
+    input_textarea6.value = localStorage.getItem("2pm");
 
     function updateOutput6() {
-      localStorage.setItem("content6", input_textarea6.value);
+      localStorage.setItem("2pm", input_textarea6.value);
 
       outputD6.textContent = input_textarea6.value;
     }
@@ -197,11 +195,11 @@ setInterval(displayTime,1000);
     var saveBtn7 = document.querySelector("#btn3pm");
 
     saveBtn7.addEventListener("click", updateOutput7);
-    outputD7.textContent = localStorage.getItem("content7");
-    input_textarea7.value = localStorage.getItem("content7");
+    outputD7.textContent = localStorage.getItem("3pm");
+    input_textarea7.value = localStorage.getItem("3pm");
 
     function updateOutput7() {
-      localStorage.setItem("content7", input_textarea7.value);
+      localStorage.setItem("3pm", input_textarea7.value);
 
       outputD7.textContent = input_textarea7.value;
     }
@@ -212,11 +210,11 @@ setInterval(displayTime,1000);
     var saveBtn8 = document.querySelector("#btn4pm");
 
     saveBtn8.addEventListener("click", updateOutput8);
-    outputD8.textContent = localStorage.getItem("content8");
-    input_textarea8.value = localStorage.getItem("content8");
+    outputD8.textContent = localStorage.getItem("4pm");
+    input_textarea8.value = localStorage.getItem("4pm");
 
     function updateOutput8() {
-      localStorage.setItem("content8", input_textarea8.value);
+      localStorage.setItem("4pm", input_textarea8.value);
 
       outputD8.textContent = input_textarea8.value;
     }
@@ -227,11 +225,11 @@ setInterval(displayTime,1000);
     var saveBtn9 = document.querySelector("#btn5pm");
 
     saveBtn9.addEventListener("click", updateOutput9);
-    outputD9.textContent = localStorage.getItem("content9");
-    input_textarea9.value = localStorage.getItem("content9");
+    outputD9.textContent = localStorage.getItem("5pm");
+    input_textarea9.value = localStorage.getItem("5pm");
 
     function updateOutput9() {
-      localStorage.setItem("content9", input_textarea9.value);
+      localStorage.setItem("5pm", input_textarea9.value);
 
       outputD9.textContent = input_textarea9.value;
     }
