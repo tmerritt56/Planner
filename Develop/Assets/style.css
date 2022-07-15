@@ -23,7 +23,8 @@ footer {
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-.description{
+.description,
+.row{
   white-space: pre-wrap;
 }
 .textarea {
@@ -55,17 +56,17 @@ footer {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #4e4e4e;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #8a04b3;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #04d2f7;
   color: white;
 }
 
@@ -80,4 +81,10 @@ footer {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.mb-3,
+.my-3 {
+  margin-bottom: 0rem!important;
+  height: 79px;
 }
