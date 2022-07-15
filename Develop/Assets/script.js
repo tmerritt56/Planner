@@ -14,7 +14,9 @@ function displayTime() {
 
   window.onload = function (){
     colorC();
+    eightA();
     nineA();
+    tenA();
     }
 
   function colorC () {
@@ -80,11 +82,10 @@ function displayTime() {
                         $("comment5pm").addClass("future");
   }
 
-
-  function nineA () {
-    var input_textarea = document.querySelector("#comment9am"); 
-    var outputD = document.querySelector("#comment9am");
-    var saveBtn = document.querySelector("#btn9am");
+  function eightA () {
+    var input_textarea = document.querySelector("#comment8am"); 
+    var outputD = document.querySelector("#comment8am");
+    var saveBtn = document.querySelector("#btn8am");
 
     saveBtn.addEventListener("click", updateOutput);
     outputD.textContent = localStorage.getItem("content");
@@ -94,5 +95,36 @@ function displayTime() {
       localStorage.setItem("content", input_textarea.value);
 
       outputD.textContent = input_textarea.value;
+    }
+  }
+
+  function nineA () {
+    var input_textarea1 = document.querySelector("#comment9am"); 
+    var outputD1 = document.querySelector("#comment9am");
+    var saveBtn1 = document.querySelector("#btn9am");
+
+    saveBtn1.addEventListener("click", updateOutput1);
+    outputD1.textContent = localStorage.getItem("content1");
+    input_textarea1.value = localStorage.getItem("content1");
+
+    function updateOutput1() {
+      localStorage.setItem("content1", input_textarea1.value);
+
+      outputD1.textContent = input_textarea1.value;
+    }
+  }
+  function tenA () {
+    var input_textarea2 = document.querySelector("#comment10am"); 
+    var outputD2 = document.querySelector("#comment10am");
+    var saveBtn2 = document.querySelector("#btn10am");
+
+    saveBtn2.addEventListener("click", updateOutput2)
+    outputD2.textContent = localStorage.getItem("content2");
+    input_textarea2.value = localStorage.getItem("content2");
+
+    function updateOutput2() {
+      localStorage.setItem("content2", input_textarea2.value);
+
+      outputD2.textContent = input_textarea2.value;
     }
   }
