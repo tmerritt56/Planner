@@ -8,14 +8,12 @@ body {
   font-size: 16px;
   line-height: 1;
 }
+div {
+  display: block;
+}
 
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
+footer {
+  text-align: center;
 }
 
 .jumbotron {
@@ -25,14 +23,20 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-
 .description{
   white-space: pre-wrap;
+}
+.textarea {
+  background: transparent;
+  resize: none;
+  border-left: 1px dashed #020000;
+  font-size: 20px;
 }
 
 .time-block{
   text-align: center;
   border-radius: 15px;
+  padding-bottom: 10px;
 } 
 .input-group-prepend {
   margin-right: -1.5px;
