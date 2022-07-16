@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -26,105 +27,94 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <div id="clockdiv"></div>
+      <p id="currentDay" class="lead display-4"></p>
+      <div id="ticktock"></div>
+      <button id="clearBtn" type = "button" class="btn btn-secondary">Clear Fields</button>
+        </div>
     </header>
     <div class="container container-fluid time-block">
       <!-- Timeblocks go here -->
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">08:00 AM</span>
-        </div>
-        <textarea value="" id="comment8am" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn8am" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">09:00 AM</span>
-        </div>
-        <textarea value="" id="comment9am" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn9am" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">10:00 AM</span>
-        </div>
-        <textarea value="" id="comment10am" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn10am" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">11:00 AM</span>
-        </div>
-        <textarea value="" id="comment11am" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn11am" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">12:00 PM</span>
-        </div>
-        <textarea value="" id="comment12pm" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn12pm" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">01:00 PM</span>
-        </div>
-        <textarea value="" id="comment1pm" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn1pm" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">02:00 PM</span>
-        </div>
-        <textarea value="" id="comment2pm" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn2pm" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">03:00 PM</span>
-        </div>
-        <textarea value="" id="comment3pm" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn3pm" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">04:00 PM</span>
-        </div>
-        <textarea value="" id="comment4pm" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn4pm" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend row">
-          <span class="input-group-text hour">05:00 PM</span>
-        </div>
-        <textarea value="" id="comment5pm" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
-        <div class="input-group-append">
-          <button id="btn5pm" class="btn btn-outline-secondary saveBtn" type="button"><i class="far fa-save"></i></button>
-        </div>
-      </div>
+            <div id
+             = "hour08" class="row timedv input-group mb-3">
+              <div class="col-md-1 hour input-group-prepend row"><span id="08">8am</span></div>
+              <textarea id = "comment8am" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+              <button id ="btn1" class="col-md-1 saveBtn">
+              <i class="fas fa-lock"></i>
+            </button>
+            </div> 
+            <div id="hour09" class="row timedv input-group mb-3">
+              <div class="col-md-1 hour input-group-prepend row"><span id="09">9am</span></div>
+              <textarea id = "comment9am" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+              <button id ="btn2" class="col-md-1 saveBtn">
+              <i class="fas fa-lock"></i>
+            </button>
+            </div> 
+            <div id="hour10" class="row timedv">
+              <div class="col-md-1 hour"><span id="10">10am</span></div>
+              <textarea id = "comment10am" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+              <button class="col-md-1 saveBtn">
+              <i class="fas fa-lock"></i> 
+            </button>
+            </div> 
+            <div id="hour11" class="row timedv">
+              <div class="col-md-1 hour"><span id="11">11am</span></div>
+              <textarea id = "comment11pm" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+              <button class="col-md-1 saveBtn4">
+              <i class="fas fa-lock"></i>
+            </button>
+            </div> 
+            <div id="hour12" class="row timedv">
+              <div class="col-md-1 hour"><span id="12">12pm</span></div>
+              <textarea id = "comment12pm" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+              <button class="col-md-1 saveBtn5">
+              <i class="fas fa-lock"></i>
+            </button>
+            </div> 
+            <div id="hour13" class="row timedv">
+              <div class="col-md-1 hour"><span id="13">1pm</span></div>
+              <textarea id = "comment1pm" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+              <button class="col-md-1 saveBtn6">
+              <i class="fas fa-lock"></i>
+            </button>
+            </div> 
+            <div id="hour14" class="row timedv">
+              <div class="col-md-1 hour"><span id="14">2pm</span></div>
+              <textarea id = "comment2pm" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+              <button class="col-md-1 saveBtn7">
+              <i class="fas fa-lock"></i>
+            </button>
+            </div> 
+            <div id="hour15" class="row timedv">
+            <div class="col-md-1 hour"><span id="15">3pm</span></div>
+            <textarea id = "comment3pm" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+            <button class="col-md-1 saveBtn8">
+            <i class="fas fa-lock"></i>
+              </button>
+              </div> 
+                <div id="hour16" class="row timedv">
+              <div class="col-md-1 hour"><span id="16">4pm</span></div>
+              <textarea id = "comment4pm" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+              <button class="col-md-1 saveBtn9">
+              <i class="fas fa-lock"></i>
+            </button>
+            </div> 
+          <div id="hour17" class="row timedv">
+            <div class="col-md-1 hour"><span id="17">5pm</span></div>
+            <textarea id = "comment5pm" class="col-md-10 description" placeholder="Add Schedule Events Here"></textarea>
+            <button class="col-md-1 saveBtn10">
+            <i class="fas fa-lock"></i>
+          </button>
+          </div> 
     </div>
 
     <footer><p>Made with ❤ by <a href="https://github.com/tmerritt56">Tara Merritt</a></p></footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="../Planner/Develop/Assets/script.js"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+    <script src="./Develop/Assets/script.js"></script>
   </body>
 </html>
