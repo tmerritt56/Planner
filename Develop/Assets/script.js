@@ -1,8 +1,21 @@
+var timeDisplayE = $('#timedisplay');
 $(document).ready(function () {
-var nowMoment = moment().format("MMMM Do YYYY");
-var displayDate = document.getElementById("currentDay");
-displayDate.innerHTML = nowMoment;
-var now = moment().format("HH");
+ 
+  function displayTime (){
+    var rightN = moment().format('MMMM DD, YYYY [at] hh:mm:ss a');
+    timeDisplayE.text(rightN);
+  }
+
+    eightA();
+    nineA();
+    tenA();
+    elevenA();
+    tweleveP();
+    oneP();
+    twoP();
+    threeP();
+    fourP();
+    fiveP();
 
 $("#clearBtn").click(function (event) {
   event.preventDefault;
@@ -10,68 +23,32 @@ $("#clearBtn").click(function (event) {
   localStorage.clear();
 });
 
-function colorC () {
-  if (now > 8) {
-    $("#comment8am").addClass("past");
-  } else if (now>=8 && now < 9) {
-    $("#comment8am").addClass("present");
-  } else (now < 9) 
-    $("#comment8am").addClass("future")
-    if (now > 9) {
-      $("#comment9am").addClass("past");
-    } else if (now>=9 && now < 10) {
-      $("#comment9am").addClass("present");
-    } else if (now < 10) 
-      $("#comment9am").addClass("future")
-      if (now > 10) {
-        $("#comment10am").addClass("past");
-      } else if (now>=10 && now < 11) {
-        $("#comment10am").addClass("present");
-      } else if (now < 11) 
-        $("#comment10am").addClass("future")
-        if (now > 11) {
-          $("#comment11am").addClass("past");
-        } else if (now>=11 && now < 12) {
-          $("#comment11am").addClass("present");
-        } else if (now < 12) 
-          $("#comment11am").addClass("future")
-          else if (now > 12) {
-            $("#comment12pm").addClass("past");
-          } else if (now>=12 && now < 13) {
-            $("#comment12pm").addClass("present");
-          } else if (now < 12) 
-            $("#comment12pm").addClass("future")
-            else if (now > 13) {
-              $("#comment1pm").addClass("past");
-            } else if (now>=13 && now < 14) {
-              $("#comment1pm").addClass("present");
-            } else if (now < 13) 
-              $("#comment1pm").addClass("future")
-              else if (now > 14) {
-                $("#comment2pm").addClass("past");
-              } else if (now>=14 && now < 15) {
-                $("#comment2pm").addClass("present");
-              } else if (now < 14) 
-                $("#comment2pm").addClass("future")
-                else if (now > 15) {
-                  $("#comment3pm").addClass("past");
-                } else if (now>=15 && now < 16) {
-                  $("#comment3pm").addClass("present");
-                } else if (now < 15) 
-                  $("#comment3pm").addClass("future")
-                  else if (now > 16) {
-                    $("#comment4pm").addClass("past");
-                  } else if (now>=16 && now < 17) {
-                    $("#comment4pm").addClass("present");
-                  } else if (now < 17) 
-                    $("#comment5pm").addClass("future")
-                    else if (now > 17) {
-                      $("#comment5pm").addClass("past");
-                    } else if (now>=17 && now < 18) {
-                      $("#comment5pm").addClass("present");
-                    } else(now < 17) 
-                      $("#comment5pm").addClass("future");
+const rows =document.getElementsByClassName("row");
+let currentHour = parseInt(moment().format('H'));
+
+Array.from(rows).forEach(row => {
+  let 
+  rowIdString = row.id,
+  rowHour;
+  if (rowIdString) {
+    rowHour = parseInt(rowIdString);
+  } if (rowHour) {
+    if (currentHour === rowHour) {
+      setColor(row,"purple");
+    } else if ((currentHour < rowHour) && (currentHour > rowHour -12)) {
+      setColor(row, "blue");
+    } else if ((currentHour > rowHour) && (currentHour < rowHour +12)) {
+      setColor(row, "gray");
+    } else {
+      setColor(row, "white");
+    }
+  }
+});
+
+function setColor (element,color) {
+  element.style.backgroundColor = color;
 }
+
 
 
   function eightA () {
@@ -225,24 +202,9 @@ function colorC () {
       outputD9.textContent = input_textarea9.value;
     }
   }
-    colorC();
-    eightA();
-    nineA();
-    tenA();
-    elevenA();
-    tweleveP();
-    oneP();
-    twoP();
-    threeP();
-    fourP();
-    fiveP();
-  } );
+
+  setInterval(displayTime, 1000);
+});
 
 
 
-
-function displayTime () {
-  document.querySelector("#ticktock").innerHTML = moment().format('h:mm:ss a');
-}
-displayTime();
-setInterval(displayTime, 1000);
