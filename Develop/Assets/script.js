@@ -4,7 +4,7 @@ var displayDate = document.getElementById("currentDay");
 displayDate.innerHTML = nowMoment;
 var currentHour = moment().format ("HH")
 
-$("#clearbtn").click(function (event) {
+$("#clearBtn").click(function (event) {
   event.preventDefault;
   $("textarea").val("");
   localStorage.clear();
@@ -61,7 +61,7 @@ function nineA () {
 function tenA () {
   var input_textarea2 = document.querySelector("#comment10am"); 
   var outputD2 = document.querySelector("#comment10am");
-  var svBtn2 = document.querySelector("#startBtn3");
+  var svBtn2 = document.querySelector("#btn3");
 
   svBtn2.addEventListener("click", updateOutput2)
   outputD2.textContent = localStorage.getItem("10am");
@@ -76,7 +76,7 @@ function tenA () {
 function elevenA () {
   var input_textarea3 = document.querySelector("#comment11am"); 
   var outputD3 = document.querySelector("#comment11am");
-  var svBtn3 = document.querySelector("#startBtn4");
+  var svBtn3 = document.querySelector("#btn4");
 
   svBtn3.addEventListener("click", updateOutput3);
   outputD3.textContent = localStorage.getItem("11am");
@@ -91,7 +91,7 @@ function elevenA () {
 function tweleveP () {
   var input_textarea4 = document.querySelector("#comment12pm"); 
   var outputD4 = document.querySelector("#comment12pm");
-  var svBtn4 = document.querySelector("#startBtn5");
+  var svBtn4 = document.querySelector("#btn5");
 
   svBtn4.addEventListener("click", updateOutput4);
   outputD4.textContent = localStorage.getItem("12pm");
@@ -106,7 +106,7 @@ function tweleveP () {
 function oneP () {
   var input_textarea5 = document.querySelector("#comment1pm"); 
   var outputD5 = document.querySelector("#comment1pm");
-  var svBtn5 = document.querySelector("#startBtn6");
+  var svBtn5 = document.querySelector("#btn6");
 
   svBtn5.addEventListener("click", updateOutput5);
   outputD5.textContent = localStorage.getItem("1pm");
@@ -121,9 +121,9 @@ function oneP () {
 function twoP () {
   var input_textarea6 = document.querySelector("#comment2pm"); 
   var outputD6 = document.querySelector("#comment2pm");
-  var svBtn6 = document.querySelector("#bstartBtn7");
+  var svBtn6 = document.querySelector("#btn7");
 
-  svtn6.addEventListener("click", updateOutput6);
+  svBtn6.addEventListener("click", updateOutput6);
   outputD6.textContent = localStorage.getItem("2pm");
   input_textarea6.value = localStorage.getItem("2pm");
 
@@ -136,7 +136,7 @@ function twoP () {
 function threeP () {
   var input_textarea7 = document.querySelector("#comment3pm"); 
   var outputD7 = document.querySelector("#comment3pm");
-  var svBtn7 = document.querySelector("#saveBtn8");
+  var svBtn7 = document.querySelector("#btn8");
 
   svBtn7.addEventListener("click", updateOutput7);
   outputD7.textContent = localStorage.getItem("3pm");
@@ -151,7 +151,7 @@ function threeP () {
 function fourP () {
   var input_textarea8 = document.querySelector("#comment4pm"); 
   var outputD8 = document.querySelector("#comment4pm");
-  var svBtn8 = document.querySelector("#saveBtn9");
+  var svBtn8 = document.querySelector("#btn9");
 
   svBtn8.addEventListener("click", updateOutput8);
   outputD8.textContent = localStorage.getItem("4pm");
@@ -166,7 +166,7 @@ function fourP () {
 function fiveP () {
   var input_textarea9 = document.querySelector("#comment5pm"); 
   var outputD9 = document.querySelector("#comment5pm");
-  var svBtn9 = document.querySelector("#saveBtn10");
+  var svBtn9 = document.querySelector("#btn10");
 
   svBtn9.addEventListener("click", updateOutput9);
   outputD9.textContent = localStorage.getItem("5pm");
